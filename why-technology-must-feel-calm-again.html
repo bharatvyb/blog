@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BharatVyb Journal</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+        background: #050505;
+        color: #f5f7fa;
+        line-height: 1.8;
+        overflow-x: hidden;
+        background-image:
+            radial-gradient(circle at 20% 20%, rgba(59,130,246,0.08), transparent 25%),
+            radial-gradient(circle at 80% 60%, rgba(59,130,246,0.05), transparent 25%);
+    }
+
+    .container {
+        max-width: 860px;
+        margin: auto;
+        padding: 40px 24px 100px;
+    }
+
+    .back-link {
+        display: inline-block;
+        margin-bottom: 60px;
+        color: #8ab4ff;
+        text-decoration: none;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        transition: 0.3s ease;
+    }
+
+    .back-link:hover {
+        color: #c5d9ff;
+        transform: translateX(-4px);
+    }
+
+    .article-header {
+        margin-bottom: 60px;
+    }
+
+    .meta {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        color: rgba(255,255,255,0.55);
+        font-size: 14px;
+        margin-bottom: 24px;
+        letter-spacing: 0.04em;
+    }
+
+    h1 {
+        font-size: clamp(2.4rem, 5vw, 4rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+    }
+
+    .subtitle {
+        font-size: 1.15rem;
+        color: rgba(255,255,255,0.72);
+        max-width: 700px;
+    }
+
+    article {
+        font-size: 1.08rem;
+        color: rgba(255,255,255,0.88);
+    }
+
+    article p {
+        margin-bottom: 28px;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+        margin: 70px 0 24px;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+    }
+
+    blockquote {
+        margin: 50px 0;
+        padding: 28px 32px;
+        border-left: 3px solid rgba(59,130,246,0.7);
+        background: rgba(255,255,255,0.03);
+        backdrop-filter: blur(18px);
+        border-radius: 18px;
+        color: #dce9ff;
+        font-size: 1.25rem;
+        font-style: italic;
+        box-shadow: 0 0 40px rgba(59,130,246,0.08);
+    }
+
+    .glass {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        backdrop-filter: blur(18px);
+        border-radius: 24px;
+        padding: 42px;
+        box-shadow:
+            0 8px 40px rgba(0,0,0,0.4),
+            0 0 60px rgba(59,130,246,0.04);
+    }
+
+    footer {
+        margin-top: 80px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        color: rgba(255,255,255,0.45);
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .glass {
+            padding: 28px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+        }
+
+        article {
+            font-size: 1rem;
+        }
+
+        blockquote {
+            font-size: 1.1rem;
+            padding: 22px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <a href="journal.html" class="back-link">← Back to Journal</a>
+
+    <header class="article-header">
+        <div class="meta">
+            <span>May 28, 2026</span>
+            <span>8 min read</span>
+        </div>
+
+        <h1>Why Technology Must Feel Calm Again</h1>
+
+        <p class="subtitle">
+            In a world built for constant alerts, endless scrolling, and digital noise,
+            the next era of innovation must prioritize clarity, stillness, and human focus.
+        </p>
+    </header>
+
+    <div class="glass">
+        <article>
+
+            <p>
+                Technology was meant to amplify human potential.
+                Instead, much of modern software has become a source of distraction,
+                dependency, and mental fragmentation.
+            </p>
+
+            <p>
+                Notifications compete for attention. Interfaces manipulate behavior.
+                Digital ecosystems reward reaction rather than reflection.
+            </p>
+
+            <blockquote>
+                The future of AI should not create more noise, dependency, and distraction.
+                It should create clarity, control, and conscious living.
+            </blockquote>
+
+            <h2>The Shift Toward Digital Minimalism</h2>
+
+            <p>
+                The next wave of meaningful products will not be defined by how much they can do,
+                but by how intentionally they choose what not to do.
+            </p>
+
+            <p>
+                Calm technology respects attention. It works quietly in the background,
+                reveals itself only when needed, and disappears when its purpose is fulfilled.
+            </p>
+
+            <h2>Designing for Presence</h2>
+
+            <p>
+                Premium digital experiences should feel like entering a quiet room:
+                spacious, deliberate, and free from unnecessary friction.
+            </p>
+
+            <p>
+                This philosophy is at the heart of BharatVyb —
+                building intelligent products that simplify digital life
+                and restore agency to the user.
+            </p>
+
+            <h2>The Road Ahead</h2>
+
+            <p>
+                We believe the future belongs to products that help people think clearly,
+                live intentionally, and stay grounded in a rapidly accelerating world.
+            </p>
+
+        </article>
+    </div>
+
+    <footer>
+        Published in BharatVyb Journal
+    </footer>
+
+</div>
+
+</body>
+</html>
