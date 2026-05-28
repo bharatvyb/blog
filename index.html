@@ -1,39 +1,183 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>BharatVyb Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BharatVyb Journal</title>
+
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
     body {
-      font-family: Arial;
-      max-width: 800px;
-      margin: auto;
-      padding: 40px;
+      background: #050505;
+      color: #ffffff;
       line-height: 1.6;
+      overflow-x: hidden;
     }
-    h1 {
-      color: #111;
+
+    .bg-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(0, 140, 255, 0.08);
+      filter: blur(120px);
+      top: -200px;
+      right: -200px;
+      z-index: -1;
     }
-    .post {
-      margin: 20px 0;
-      padding: 20px;
-      border: 1px solid #eee;
-      border-radius: 10px;
+
+    header {
+      padding: 30px 8%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      background: rgba(5,5,5,0.75);
     }
-    a {
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      padding: 100px 8%;
+      max-width: 1100px;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      line-height: 1.1;
+      max-width: 800px;
+      margin-bottom: 24px;
+      background: linear-gradient(to right, #ffffff, #8fbfff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #b0b0b0;
+      max-width: 700px;
+    }
+
+    .section-title {
+      padding: 0 8%;
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+    }
+
+    .posts {
+      padding: 0 8% 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 30px;
+      transition: all 0.3s ease;
       text-decoration: none;
-      color: #0066cc;
+      color: white;
+      backdrop-filter: blur(12px);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(0,140,255,0.35);
+      box-shadow: 0 20px 50px rgba(0,140,255,0.08);
+    }
+
+    .tag {
+      color: #66b3ff;
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+    }
+
+    .card p {
+      color: #b0b0b0;
+    }
+
+    footer {
+      padding: 50px 8%;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #777;
+      text-align: center;
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size: 2.5rem;
+      }
     }
   </style>
 </head>
-<body>
-  <h1>BharatVyb Blog</h1>
-  <p>Thoughts on AI, digital independence, and mindful technology.</p>
 
-  <div class="post">
-    <h2>
-      <a href="first-post.html">Why BharatVyb Exists</a>
-    </h2>
-    <p>The future of AI should create clarity, control, and conscious living.</p>
-  </div>
+<body>
+
+<div class="bg-glow"></div>
+
+<header>
+  <div class="logo">BHARATVYB</div>
+</header>
+
+<section class="hero">
+  <h1>Ideas for a more conscious digital future.</h1>
+  <p>
+    Reflections on AI, digital independence, mindful technology,
+    and building products that create clarity, control, and conscious living.
+  </p>
+</section>
+
+<h2 class="section-title">Latest Writing</h2>
+
+<section class="posts">
+
+  <a href="first-post.html" class="card">
+    <span class="tag">FOUNDATION</span>
+    <h3>Why BharatVyb Exists</h3>
+    <p>
+      The philosophy behind building intelligent products that simplify digital life.
+    </p>
+  </a>
+
+  <a href="#" class="card">
+    <span class="tag">COMING SOON</span>
+    <h3>The Problem With AI Dependency</h3>
+    <p>
+      Why convenience without control creates long-term digital dependence.
+    </p>
+  </a>
+
+  <a href="#" class="card">
+    <span class="tag">COMING SOON</span>
+    <h3>Digital Independence in an AI-First World</h3>
+    <p>
+      Building systems that empower ownership, clarity, and sovereignty.
+    </p>
+  </a>
+
+</section>
+
+<footer>
+  © 2026 BharatVyb AI Solutions - Shaping Tomorrow With AI
+</footer>
+
 </body>
 </html>
