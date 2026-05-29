@@ -128,7 +128,7 @@ document.getElementById("waitlistForm").addEventListener("submit", async functio
 
     const email = document.getElementById("email").value;
 
-    const response = await fetch("YOUR_N8N_WEBHOOK_URL", {
+    const response = await fetch("http://localhost:5678/webhook-test/nestcloud-waitlist", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
