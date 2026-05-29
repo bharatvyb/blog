@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NestCloud Waitlist</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f3ef;
+    color: #0b6662;
+    text-align: center;
+}
+
+.hero {
+    padding: 40px 20px;
+}
+
+.logo {
+    width: 90px;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 20px;
+    margin-bottom: 50px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.waitlist-box {
+    max-width: 620px;
+    margin: auto;
+    border: 2px solid #0b6662;
+    border-radius: 24px;
+    padding: 45px;
+    background: transparent;
+}
+
+.waitlist-box h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 18px;
+    border-radius: 14px;
+    border: 2px solid #7aa9a7;
+    font-size: 18px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 20px;
+    border: none;
+    border-radius: 999px;
+    background: #18b7c5;
+    color: #0b6662;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover:not(:disabled) {
+    opacity: 0.92;
+}
+
+button:disabled {
+    background: #9ecdd1;
+    cursor: not-allowed;
+}
+
+input:disabled {
+    background: #f0f0f0;
+}
+
+.footer-text {
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+#responseMessage {
+    margin-top: 22px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.error {
+    color: #cc3d3d;
+}
+
+.success {
+    color: #0b6662;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+    <!-- Replace with your actual logo -->
+    <img src="logo.png" alt="NestCloud Logo" class="logo">
+
+    <h1>The Future of Personal Cloud is Private.</h1>
+
+    <p class="subtitle">
+        Own your memories, files, and digital life — privately, beautifully, and without any monthly subscriptions.
+    </p>
+
+    <div class="waitlist-box">
+        <h2>Join the private waitlist</h2>
+
+        <form id="waitlistForm">
+            <label>Where should we send your invite?</label>
+
+            <input
+                type="email"
+                id="email"
+                required
+                placeholder="Enter your email"
+            >
+
+            <button type="submit" id="submitBtn">
+                Request Early Access
+            </button>
+        </form>
+
+        <div id="responseMessage"></div>
+    </div>
+
+    <p class="footer-text">
+        We’ll send only launch updates and your early access invite — nothing else.
+    </p>
+</section>
+
+<script>
+document.getElementById("waitlistForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const emailInput = document.getElementById("email");
+    const submitBtn = document.getElementById("submitBtn");
+    const responseMessage = document.getElementById("responseMessage");
+
+    const email = emailInput.value.trim();
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+        responseMessage.innerHTML = "Please enter a valid email address.";
+        responseMessage.className = "error";
+        return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = "Submitting...";
+    responseMessage.innerHTML = "";
+
+    try {
+        const response = await fetch("http://localhost:5678/webhook-test/nestcloud-waitlist", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email })
+        });
+
+        const data = await response.json();
+
+        emailInput.disabled = true;
+        submitBtn.innerHTML = "You're On The Waitlist";
+        responseMessage.innerHTML = data.message;
+        responseMessage.className = "success";
+
+    } catch (error) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Request Early Access";
+        responseMessage.innerHTML = "Submission failed. Please try again.";
+        responseMessage.className = "error";
+    }
+});
+</script>
+
+</body>
+</html>
