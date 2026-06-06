@@ -133,6 +133,18 @@ hr{
     font-size:.95rem;
 }
 
+.cta-box{
+    margin-top:50px;
+    padding:30px;
+    border-radius:18px;
+    background:rgba(102,179,255,.05);
+    border:1px solid rgba(102,179,255,.15);
+}
+
+.cta-box h2{
+    margin-top:0;
+}
+
 @media(max-width:768px){
 
     .container{
